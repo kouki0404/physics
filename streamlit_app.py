@@ -62,4 +62,3 @@ if chapter == "1章":
             else:
                 st.write("(3)②不正解")
     if serrect == "相対速度":
-        
