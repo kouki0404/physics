@@ -1,29 +1,13 @@
 import streamlit as st
 import random
+import pandas as pd
 
 # Streamlitアプリのタイトル
 st.title("物理演習アプリ")
 
-# セッションステートの初期化
-if "number" not in st.session_state:
-    number = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, -10, -20, -30, -40, -50]
-    st.session_state.x = random.randint(0, 14)
-    st.session_state.y = random.randint(0, 14)
-    st.session_state.z = random.randint(0, 14)
-    st.session_state.n = random.randint(0, 14)
-    st.session_state.s = random.randint(1, 3)
-    st.session_state.f = random.randint(4, 8)
-    st.session_state.xx = number[st.session_state.x]
-    st.session_state.yy = number[st.session_state.y]
-    st.session_state.zz = number[st.session_state.z]
-    st.session_state.nn = number[st.session_state.n]
-    st.session_state.solution = 0
-    st.session_state.question = 0
-    # Initialize answers to empty strings
-    st.session_state.solution_one = ""
-    st.session_state.solution_two = ""
-    st.session_state.solution_three = ""
-    st.session_state.solution_four = ""
+@st.chace_date
+def load_date():
+    number = pd.read_excel("date")
 
 # 出題範囲
 st.sidebar.title("章を選択してください")
