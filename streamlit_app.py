@@ -20,6 +20,9 @@ nn = number[n]
 if "solution" not in st.session_state:
     st.session_state.solution = 0
 
+if "question" not in st.session_state:
+    st.session_state.question = 0
+
 #出題範囲
 st.sidebar.title("章を選択してください")
 chapter = st.sidebar.radio("",("1章","2章","3章","4章","5章"),horizontal=True)
@@ -34,6 +37,7 @@ fifth = ["制作中"]
 if chapter == "1章":
     serrect = st.sidebar.selectbox("出題範囲",first)
     if serrect == "合成速度":
+        st.session_state.question += 1
         st.write("速さ" + str(s) + ".0m/sで流れる川の中を、船(静水時での速さ" + str(f) + ".0m/s)が川の流れと平行に進む")
         st.write("(1) 船が川下に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
         solution_one = st.text_area("(1)回答 ※数字のみ")
