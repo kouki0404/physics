@@ -65,14 +65,3 @@ if chapter == "1章":
         
     
 
-if selected_second:
-    st.sidebar.selectbox("出題範囲",second)
-
-if selected_third:
-    st.sidebar.selectbox("出題範囲",third)
-
-if selected_fourth:
-    st.sidebar.selectbox("出題範囲",fourth)
-
-if selected_fifth:
-    st.sidebar.selectbox("出題範囲",fifth)
