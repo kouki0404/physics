@@ -34,7 +34,7 @@ fifth = ["制作中"]
 if chapter == "1章":
     serrect = st.sidebar.selectbox("出題範囲",first)
     if serrect == "合成速度":
-        st.write("速さ" + str(s) + ".0m/sで流れる川の中を、船(静水時での速さ" + ".0m/s)が川の流れと平行に進む")
+        st.write("速さ" + str(s) + ".0m/sで流れる川の中を、船(静水時での速さ" + str(f) + ".0m/s)が川の流れと平行に進む")
         st.write("(1) 船が川下に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
         solution_one = st.text_area("(1)回答 ※数字のみ")
         st.write("(2) 船が川上に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
