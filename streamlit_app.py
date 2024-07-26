@@ -61,6 +61,8 @@ if chapter == "1章":
                 st.write("(3)②正解")
             else:
                 st.write("(3)②不正解")
+    if serrect == "相対速度":
+        
     
 
 if selected_second:
