@@ -5,17 +5,21 @@ import pandas as pd
 
 st.title("物理演習アプリ")
 
-number = [10,20,30,40,50,60,70,80,90,100,-10,-20,-30,-40,-50] #等加速度の時のみxの範囲を0から14にする
-x = random.randint(0,10)
-y = random.randint(0,10)
-z = random.randint(0,10)
-n = random.randint(0,10)
-s = random.randint(1,3)
-f = random.randint(4,8)
-xx = number[x]
-yy = number[y]
-zz = number[z]
-nn = number[n]
+if "number" not in st.session_state:
+    number = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, -10, -20, -30, -40, -50]
+    st.session_state.x = random.randint(0, 14)
+    st.session_state.y = random.randint(0, 14)
+    st.session_state.z = random.randint(0, 14)
+    st.session_state.n = random.randint(0, 14)
+    st.session_state.s = random.randint(1, 3)
+    st.session_state.f = random.randint(4, 8)
+    st.session_state.xx = number[st.session_state.x]
+    st.session_state.yy = number[st.session_state.y]
+    st.session_state.zz = number[st.session_state.z]
+    st.session_state.nn = number[st.session_state.n]
+    st.session_state.solution = 0
+    st.session_state.question = 0
+
 
 if "solution" not in st.session_state:
     st.session_state.solution = 0
@@ -46,25 +50,25 @@ if chapter == "1章":
         st.write("(3) ①船が川を" + str(xx) + "m下るのと、②" + str(yy) + "m上るのにかかる時間はそれぞれ何秒か。")
         solution_three = st.text_area("(3)①回答 ※数字のみ")
         solution_four = st.text_area("(3)②回答 ※数字のみ")
-        st.session_state.question += 1
+        
 
         if st.button("解答確認"):
             st.session_state.solution += 1
 
             try:
-                if solution_one == s + f:
+                if int(solution_one) == st.session_state.s + st.session_state.f:
                     st.write("(1)正解")
                 else:
                     st.write("(1)不正解")
-                if solution_two == s - f:
+                if int(solution_two) == st.session_state.s - st.session_state.f:
                     st.write("(2)正解")
                 else:
                     st.write("(2)不正解")
-                if solution_three == xx / (s + f):
+                if int(solution_three) == st.session_state.xx / (st.session_state.s + st.session_state.f):
                     st.write("(3)①正解")
                 else:
                     st.write("(3)①不正解")
-                if solution_four == yy / (f - s):
+                if int(solution_four) == st.session_state.yy / (st.session_state.f - st.session_state.s):
                     st.write("(3)②正解")
                 else:
                     st.write("(3)②不正解")
