@@ -46,6 +46,7 @@ if chapter == "1章":
         st.write("(3) ①船が川を" + str(xx) + "m下るのと、②" + str(yy) + "m上るのにかかる時間はそれぞれ何秒か。")
         solution_three = st.text_area("(3)①回答 ※数字のみ")
         solution_four = st.text_area("(3)②回答 ※数字のみ")
+        st.session_state.question += 1
 
         if st.button("解答確認"):
             st.session_state.solution += 1
