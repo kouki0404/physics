@@ -9,6 +9,10 @@ st.title("物理演習アプリ")
 def load_date():
     number = pd.read_excel("date")
 
+return pd.concat([date], ignore_indez=True)
+
+one_df = load_date()
+
 # 出題範囲
 st.sidebar.title("章を選択してください")
 chapter = st.sidebar.radio("", ("1章", "2章", "3章", "4章", "5章"), horizontal=True)
