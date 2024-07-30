@@ -12,7 +12,7 @@ if st.session_state.numbers != 0:
     st.session_state.solution_three == 0
     st.session_state.solution_four == 0
 
-if st.session_state.numbers = 0:
+if st.session_state.numbers == 0:
     st.session_state.numbers == 0
     st.session_state.solution_one == 0
     st.session_state.solution_two == 0
