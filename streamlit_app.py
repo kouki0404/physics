@@ -74,7 +74,7 @@ if chapter == "1章":
                 else:
                     st.write("(2)不正解")
 
-                if int(st.session_state.solution_three) == (xx / st.session_state.solution_one):
+                if int(st.session_state.solution_three) == int(xx / st.session_state.solution_one):
                     st.write("(3)①正解")
                 else:
                     st.write("(3)①不正解")
