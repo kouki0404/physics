@@ -19,7 +19,7 @@ if 'solution_four' not in st.session_state:
 if 'question' not in st.session_state:
     st.session_state.question = 0
 number = [0,10,20,30,40,50,60,70,80,90,100]
-speed = [0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,-0.5,-1,-1.5,-2,-2.5,-3,-3.5,-4,-4.5,-5]
+speed = [0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,-0.5,-1.0,-1.5,-2.0,-2.5,-3.0,-3.5,-4.0,-4.5,-5.0]
 if 'x' not in st.session_state:
     st.session_state.x = random.randint(0,9)
 if 'y' not in st.session_state:
@@ -141,7 +141,7 @@ if chapter == "1章":
         st.sidebar.title("難易度を選択してください")
         easy = st.sidebar.radio("", ("基礎", "応用"), horizontal=True)
         if easy == "基礎":
-            st.write("右向きに速さ" + str(st.session_state.x) + ".0m/sで動いていた物体が一定の加速度" + str(uu) + ".0m/sで速さを増した。")
+            st.write("右向きに速さ" + str(st.session_state.x) + ".0m/sで動いていた物体が一定の加速度" + str(uu) + "m/sで速さを増した。")
 
 
 if chapter == "2章":
