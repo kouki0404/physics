@@ -129,6 +129,8 @@ if chapter == "1章":
                     st.write("(2)正解")
                 else:
                     st.write("(2)不正解")
+             except ValueError:
+                st.write("入力された値が無効です。数字のみを入力してください")
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
