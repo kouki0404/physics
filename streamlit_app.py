@@ -88,6 +88,6 @@ if chapter == "1章":
             except ValueError:
                 st.write("入力された値が無効です。数字のみを入力してください")
     
-    if serrect == "相対速度":
+    if choose == "相対速度":
         st.write("a")
 
