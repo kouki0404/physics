@@ -142,6 +142,26 @@ if chapter == "1章":
         easy = st.sidebar.radio("", ("基礎", "応用"), horizontal=True)
         if easy == "基礎":
             st.write("右向きに速さ" + str(st.session_state.x) + ".0m/sで動いていた物体が一定の加速度" + str(uu) + "m/sで速さを増した。")
+            st.write(str(st.session_state.y) + ".0秒後の物体の速さは何m/sか。")
+            st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
+            st.write(str(st.session_state.z) + ".0秒後までに物体が進んだ距離は何ｍか。")
+            st.session_state.solution_two = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
+
+            if st.button("解答確認"):
+                st.session_state.solution += 1  
+            try:
+                # 数値の比較
+                if int(st.session_state.solution_one) == st.session_state.x + int(uu * st.session_state.y):
+                    st.write("(1)正解")
+                else:
+                    st.write("(1)不正解")
+
+                if int(st.session_state.solution_two) == int(st.session_state.x * st.session_state.z) + int(0.5 * uu * st.session_state.z ** 2):
+                    st.write("(2)正解")
+                else:
+                    st.write("(2)不正解")
+            except ValueError:
+                st.write("入力された値が無効です。数字のみを入力してください")
 
 
 if chapter == "2章":
