@@ -74,10 +74,19 @@ if chapter == "1章":
                 else:
                     st.write("(2)不正解")
 
-                if int(st.session_state.solution_three) == int(xx / st.session_state.solution_one):
-                    st.write("(3)①正解")
+                if xx / st.session_state.solution_one != "%.1f":
+                    h = int(xx / st.session_state.solution_one)
+                    h = round(h,1)
+                    if int(st.session_state.solution_three) == int(h):
+                        st.write("(3)①正解")
+                    else:
+                        st.write("(3)①不正解")
                 else:
-                    st.write("(3)①不正解")
+                    h = int(xx / st.session_state.solution_one)
+                    if int(st.session_state.solution_three) == int(h):
+                        st.write("(3)①正解")
+                    else:
+                        st.write("(3)①不正解")
 
                 if yy / st.session_state.solution_two * -1 != "%.1f":
                     w = int(yy / st.session_state.solution_two * -1)
