@@ -17,11 +17,16 @@ if 'solution_four' not in st.session_state:
 if 'question' not in st.session_state:
     st.session_state.question = 0
 number = [0,10,20,30,40,50,60,70,80,90,100]
-st.session_state.x = random.randint(0,9)
-st.session_state.y = random.randint(0,9)
-st.session_state.z = random.randint(0,9)
-st.session_state.s = random.randint(1,3)
-st.session_state.f = random.randint(4,7)
+if 'x' not in st.session_state:
+    st.session_state.x = random.randint(0,9)
+if 'y' not in st.session_state:
+    st.session_state.y = random.randint(0,9)
+if 'z' not in st.session_state:
+    st.session_state.z = random.randint(0,9)
+if 's' not in st.session_state:
+    st.session_state.s = random.randint(1,3)
+if 'f' not in st.session_state:
+    st.session_state.f = random.randint(4,7)
 xx = number[st.session_state.x]
 yy = number[st.session_state.y]
 zz = number[st.session_state.z]
