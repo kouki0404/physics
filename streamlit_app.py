@@ -32,6 +32,7 @@ if 'f' not in st.session_state:
 xx = number[st.session_state.x]
 yy = number[st.session_state.y]
 zz = number[st.session_state.z]
+answer_one = st.session_state.s + st.session_state.f
 
 
 # 出題範囲
@@ -74,7 +75,7 @@ if chapter == "1章":
                 else:
                     st.write("(2)不正解")
 
-                if int(st.session_state.solution_three) == xx / (st.session_state.s + st.session_state.f):
+                if int(st.session_state.solution_three) == xx / answer_one:
                     st.write("(3)①正解")
                 else:
                     st.write("(3)①不正解")
