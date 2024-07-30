@@ -19,6 +19,7 @@ if 'solution_four' not in st.session_state:
 if 'question' not in st.session_state:
     st.session_state.question = 0
 number = [0,10,20,30,40,50,60,70,80,90,100]
+speed = [0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,-0.5,-1,-1.5,-2,-2.5,-3,-3.5,-4,-4.5,-5]
 if 'x' not in st.session_state:
     st.session_state.x = random.randint(0,9)
 if 'y' not in st.session_state:
@@ -29,10 +30,12 @@ if 's' not in st.session_state:
     st.session_state.s = random.randint(1,3)
 if 'f' not in st.session_state:
     st.session_state.f = random.randint(4,7)
+if 'u' not in st.session_state:
+    st.session_state.u = random.randint(0,19)
 xx = number[st.session_state.x]
 yy = number[st.session_state.y]
 zz = number[st.session_state.z]
-
+uu = speed[st.session_state.u]
 
 # 出題範囲
 st.sidebar.title("章を選択してください")
@@ -110,6 +113,7 @@ if chapter == "1章":
                 st.write("入力された値が無効です。数字のみを入力してください")
     
     if choose == "相対速度":
+        st.session_state.question += 1
         st.write("直線上を右向きに" + str(st.session_state.x) + ".0m/sで移動するAさんがいる。")
         st.write("(1)右向きに" + str(st.session_state.y) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
         st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
@@ -131,6 +135,14 @@ if chapter == "1章":
                     st.write("(2)不正解")
             except ValueError:
                 st.write("入力された値が無効です。数字のみを入力してください")
+
+    if choose == "等加速度直線運動":
+        st.session_state.question += 1
+        st.sidebar.title("難易度を選択してください")
+        easy = st.sidebar.radio("", ("基礎", "応用"), horizontal=True)
+        if easy == "基礎":
+            st.write("右向きに速さ" + str(st.session_state.x) + ".0m/sで動いていた物体が一定の加速度" + str(uu) + ".0m/sで速さを増した。")
+
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
