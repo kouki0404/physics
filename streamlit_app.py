@@ -112,3 +112,6 @@ if chapter == "1章":
     if choose == "相対速度":
         st.write("a")
 
+if chapter == "2章":
+    choose = st.sidebar.selectbox("出題範囲", second)
+
