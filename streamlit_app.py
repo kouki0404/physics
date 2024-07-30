@@ -149,19 +149,19 @@ if chapter == "1章":
 
             if st.button("解答確認"):
                 st.session_state.solution += 1  
-            try:
-                # 数値の比較
-                if int(st.session_state.solution_one) == st.session_state.x + int(uu * st.session_state.y):
-                    st.write("(1)正解")
-                else:
-                    st.write("(1)不正解")
+                try:
+                    # 数値の比較
+                    if int(st.session_state.solution_one) == st.session_state.x + int(uu * st.session_state.y):
+                        st.write("(1)正解")
+                    else:
+                        st.write("(1)不正解")
 
-                if int(st.session_state.solution_two) == int(st.session_state.x * st.session_state.z) + int(0.5 * uu * st.session_state.z ** 2):
-                    st.write("(2)正解")
-                else:
-                    st.write("(2)不正解")
-            except ValueError:
-                st.write("入力された値が無効です。数字のみを入力してください")
+                    if int(st.session_state.solution_two) == int(st.session_state.x * st.session_state.z) + int(0.5 * uu * st.session_state.z ** 2):
+                        st.write("(2)正解")
+                    else:
+                        st.write("(2)不正解")
+                except ValueError:
+                    st.write("入力された値が無効です。数字のみを入力してください")
 
 
 if chapter == "2章":
