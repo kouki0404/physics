@@ -143,14 +143,14 @@ if chapter == "1章":
         if easy == "基礎":
             st.write("右向きに速さ" + str(st.session_state.x) + ".0m/sで動いていた物体が一定の加速度" + str(uu) + "m/sで速さを増した。")
             if st.session_state.y > 5:
-                number_y = st.session_state.y - 5
+                number_y = st.session_state.y - 4
                 st.write("(1)" + str(number_y) + ".0秒後の物体の速さは何m/sか。")
                 st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
             else:
                 st.write("(1)" + str(st.session_state.y) + ".0秒後の物体の速さは何m/sか。")
                 st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
             if st.session_state.z > 5:
-                number_z = st.session_state.z - 5
+                number_z = st.session_state.z - 4
                 st.write("(1)" + str(number_z) + ".0秒後までに物体が進んだ距離は何ｍか。")
                 st.session_state.solution_two = st.number_input("(2)回答 ※数字のみ", step=0.1, format="%.1f")
             else:
