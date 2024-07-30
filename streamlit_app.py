@@ -5,11 +5,19 @@ import pandas as pd
 # Streamlitアプリのタイトル
 st.title("物理演習アプリ")
 
-st.session_state.numbers == 0
-st.session_state.solution_one == 0
-st.session_state.solution_two == 0
-st.session_state.solution_three == 0
-st.session_state.solution_four == 0
+if st.session_state.numbers != 0:
+    st.session_state.numbers == 0
+    st.session_state.solution_one == 0
+    st.session_state.solution_two == 0
+    st.session_state.solution_three == 0
+    st.session_state.solution_four == 0
+
+if st.session_state.numbers = 0:
+    st.session_state.numbers == 0
+    st.session_state.solution_one == 0
+    st.session_state.solution_two == 0
+    st.session_state.solution_three == 0
+    st.session_state.solution_four == 0
 number = [0,10,20,30,40,50,60,70,80,90,100]
 st.session_state.x = random.randint(0,9)
 st.session_state.y = random.randint(0,9)
