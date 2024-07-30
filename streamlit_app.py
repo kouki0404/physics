@@ -5,13 +5,17 @@ import pandas as pd
 # Streamlitアプリのタイトル
 st.title("物理演習アプリ")
 
-@st.chace_date
-def load_date():
-    number = pd.read_excel("date")
+st.session_state.numbers == 0
+number = [0,10,20,30,40,50,60,70,80,90,100]
+st.session_state.x = random.randint(0,9)
+st.session_state.y = random.randint(0,9)
+st.session_state.z = random.randint(0,9)
+st.session_state.s = random.randint(1,3)
+st.session_state.f = random.randint(4,7)
+xx = number[st.session_state.x]
+yy = number[st.session_state.y]
+zz = number[st.session_state.z]
 
-return pd.concat([date], ignore_indez=True)
-
-one_df = load_date()
 
 # 出題範囲
 st.sidebar.title("章を選択してください")
@@ -25,18 +29,26 @@ fourth = ["制作中"]
 fifth = ["制作中"]
 
 if chapter == "1章":
-    serrect = st.sidebar.selectbox("出題範囲", first)
+    choose = st.sidebar.selectbox("出題範囲", first)
     
-    if serrect == "合成速度":
+    if choose == "合成速度":
         st.session_state.question += 1
-        st.write(f"速さ{st.session_state.s}.0m/sで流れる川の中を、船(静水時での速さ{st.session_state.f}.0m/s)が川の流れと平行に進む")
+        st.write("速さ" + st.session_state.s + ".0m/sで流れる川の中を、船(静水時での速さ" + st.session_state.f + ".0m/s)が川の流れと平行に進む")
         st.write("(1) 船が川下に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
-        st.session_state.solution_one = st.text_area("(1)回答 ※数字のみ", value=st.session_state.solution_one)
+        st.session_state.solution_one = st.text_area("(1)回答 ※数字のみ")
+        if selected st.session_state.solution_one:
+            st.session_state.numbers += 1
         st.write("(2) 船が川上に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
-        st.session_state.solution_two = st.text_area("(2)回答 ※数字のみ", value=st.session_state.solution_two)
-        st.write(f"(3) ①船が川を{st.session_state.xx}m下るのと、②{st.session_state.yy}m上るのにかかる時間はそれぞれ何秒か。")
-        st.session_state.solution_three = st.text_area("(3)①回答 ※数字のみ", value=st.session_state.solution_three)
-        st.session_state.solution_four = st.text_area("(3)②回答 ※数字のみ", value=st.session_state.solution_four)
+        st.session_state.solution_two = st.text_area("(2)回答 ※数字のみ")
+        if selected st.session_state.solution_two:
+            st.session_state.numbers += 1
+        st.write("(3) ①船が川を" + st.session_state.xx + "m下るのと、②" + st.session_state.yy + "m上るのにかかる時間はそれぞれ何秒か。")
+        st.session_state.solution_three = st.text_area("(3)①回答 ※数字のみ")
+        if selected st.session_state.solution_three:
+            st.session_state.numbers += 1
+        st.session_state.solution_four = st.text_area("(3)②回答 ※数字のみ")
+        if selected st.session_state.solution_four:
+            st.session_state.numbers += 1
 
         if st.button("解答確認"):
             st.session_state.solution += 1
