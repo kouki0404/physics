@@ -115,3 +115,11 @@ if chapter == "1章":
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
 
+if chapter == "3章":
+    choose = st.sidebar.selectbox("出題範囲", third)
+
+if chapter == "4章":
+    choose = st.sidebar.selectbox("出題範囲", fourth)
+
+if chapter == "5章":
+    choose = st.sidebar.selectbox("出題範囲", fifth)
