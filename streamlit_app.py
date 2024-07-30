@@ -145,7 +145,7 @@ if chapter == "1章":
             st.write(str(st.session_state.y) + ".0秒後の物体の速さは何m/sか。")
             st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
             st.write(str(st.session_state.z) + ".0秒後までに物体が進んだ距離は何ｍか。")
-            st.session_state.solution_two = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
+            st.session_state.solution_two = st.number_input("(2)回答 ※数字のみ", step=0.1, format="%.1f")
 
             if st.button("解答確認"):
                 st.session_state.solution += 1  
