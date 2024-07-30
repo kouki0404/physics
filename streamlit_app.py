@@ -79,7 +79,7 @@ if chapter == "1章":
                 else:
                     st.write("(3)①不正解")
 
-                if int(yy / st.session_state.solution_two * -1) = "%.2f":
+                if yy / st.session_state.solution_two * -1 != "%.1f":
                     w = int(yy / st.session_state.solution_two * -1)
                     w = round(w, 1)
                     
@@ -87,6 +87,14 @@ if chapter == "1章":
                         st.write("(3)②正解")
                     else:
                         st.write("(3)②不正解")
+
+                else:
+                    w = int(yy / st.session_state.solution_two * -1)
+                    if int(st.session_state.solution_four) == int(w):
+                        st.write("(3)②正解")
+                    else:
+                        st.write("(3)②不正解")
+
             
             except ValueError:
                 st.write("入力された値が無効です。数字のみを入力してください")
