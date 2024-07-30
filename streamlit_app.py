@@ -6,6 +6,8 @@ import pandas as pd
 st.title("物理演習アプリ")
 if 'numbers' not in st.session_state:
     st.session_state.numbers = 0
+if 'solution' not in st.session_state:
+    st.session_state.solution = 0
 if 'solution_one' not in st.session_state:
     st.session_state.solution_one = 0
 if 'solution_two' not in st.session_state:
