@@ -14,6 +14,8 @@ if 'solution_three' not in st.session_state:
     st.session_state.solution_three = 0
 if 'solution_four' not in st.session_state:
     st.session_state.solution_four = 0
+if 'question' not in st.session_state:
+    st.session_state.question = 0
 number = [0,10,20,30,40,50,60,70,80,90,100]
 st.session_state.x = random.randint(0,9)
 st.session_state.y = random.randint(0,9)
