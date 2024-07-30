@@ -113,7 +113,7 @@ if chapter == "1章":
         st.write("直線上を右向きに" + str(st.session_state.x) + ".0m/sで移動するAさんがいる。")
         st.write("(1)右向きに" + str(st.session_state.y) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
         st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
-        st.wriet("左向きに" + str(st.session_state.z) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
+        st.write("左向きに" + str(st.session_state.z) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
         st.session_state.solution_two = st.number_input("(2)回答 ※数字のみ", step=0.1, format="%.1f")
 
         if st.button("解答確認"):
