@@ -110,7 +110,25 @@ if chapter == "1章":
                 st.write("入力された値が無効です。数字のみを入力してください")
     
     if choose == "相対速度":
-        st.write("a")
+        st.write("直線上を右向きに" + str(st.session_state.x) + ".0m/sで移動するAさんがいる。")
+        st.write("(1)右向きに" + str(st.session_state.y) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
+        st.session_state.solution_one = st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
+        st.wriet("左向きに" + str(st.session_state.z) + ".0m/sで移動するBさんに対するAさんの相対速度を求めよ。(右向きを正とする)")
+        st.session_state.solution_two = st.number_input("(2)回答 ※数字のみ", step=0.1, format="%.1f")
+
+        if st.button("解答確認"):
+            st.session_state.solution += 1  
+            try:
+                # 数値の比較
+                if int(st.session_state.solution_one) == st.session_state.x - st.session_state.y:
+                    st.write("(1)正解")
+                else:
+                    st.write("(1)不正解")
+
+                if int(st.session_state.solution_two) == st.session_state.x + st.session_state.z:
+                    st.write("(2)正解")
+                else:
+                    st.write("(2)不正解")
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
