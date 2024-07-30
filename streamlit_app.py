@@ -51,19 +51,11 @@ if chapter == "1章":
         st.write("速さ" + str(st.session_state.s) + ".0m/sで流れる川の中を、船(静水時での速さ" + str(st.session_state.f) + ".0m/s)が川の流れと平行に進む")
         st.write("(1) 船が川下に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
         st.session_state.solution_one = st.text_area("(1)回答 ※数字のみ")
-        if st.text_area("(1)回答 ※数字のみ"):
-            st.session_state.numbers += 1
         st.write("(2) 船が川上に向かって進む場合、川岸で静止している人から見た船の速度は何m/sか。(川下を正とする)")
         st.session_state.solution_two = st.text_area("(2)回答 ※数字のみ")
-        if st.text_area("(2)回答 ※数字のみ"):
-            st.session_state.numbers += 1
         st.write("(3) ①船が川を" + str(st.session_state.xx) + "m下るのと、②" + str(st.session_state.yy) + "m上るのにかかる時間はそれぞれ何秒か。")
         st.session_state.solution_three = st.text_area("(3)①回答 ※数字のみ")
-        if st.text_area("(3)①回答 ※数字のみ"):
-            st.session_state.numbers += 1
         st.session_state.solution_four = st.text_area("(3)②回答 ※数字のみ")
-        if st.text_area("(3)②回答 ※数字のみ"):
-            st.session_state.numbers += 1
 
         if st.button("解答確認"):
             st.session_state.solution += 1
