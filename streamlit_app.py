@@ -203,7 +203,7 @@ if chapter == "1章":
                     except ValueError:
                         st.write("入力された値が無効です。数字のみを入力してください")
         
-        else:
+        if easy == "応用":
             st.write("ゴールまで残り" + str(faster) + "mの位置で4つの物体が並んでいる")
             st.write("4つの物体はそれぞれ以下のように一直線上に運動をしている")
             st.write("(A) " + str(qq) + "m/s²の速度の大きさを保って減速している。残り" + str(faster) + "m地点での速さは" + str(st.session_state.fast) + "m/sであった。")
