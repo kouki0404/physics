@@ -18,7 +18,7 @@ if 'solution_four' not in st.session_state:
     st.session_state.solution_four = 0
 if 'question' not in st.session_state:
     st.session_state.question = 0
-number = [0,10,20,30,40,50,60,70,80,90,100]
+number = [0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
 speed = [0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,-0.5,-1.0,-1.5,-2.0,-2.5,-3.0,-3.5,-4.0,-4.5,-5.0]
 if 'x' not in st.session_state:
     st.session_state.x = random.randint(0,9)
@@ -32,10 +32,17 @@ if 'f' not in st.session_state:
     st.session_state.f = random.randint(4,7)
 if 'u' not in st.session_state:
     st.session_state.u = random.randint(0,19)
+if 'fast' not in st.session_state:
+    st.session_state.fast = random.randint(10,15)
+if 'q' not in st.session_state:
+    st.session_state.q = random.randint(1,9)
 xx = number[st.session_state.x]
 yy = number[st.session_state.y]
 zz = number[st.session_state.z]
 uu = speed[st.session_state.u]
+faster = number[st.session_state.fast]
+qq = st.session_state.q * 0.1
+ss = speed[st.session_state.s]
 
 # 出題範囲
 st.sidebar.title("章を選択してください")
@@ -195,6 +202,12 @@ if chapter == "1章":
                             st.write("(2)不正解")
                     except ValueError:
                         st.write("入力された値が無効です。数字のみを入力してください")
+        
+        else:
+            st.write("ゴールまで残り" + str(faster) + "mの位置で4つの物体が並んでいる")
+            st.write("4つの物体はそれぞれ以下のように一直線上に運動をしている")
+            st.write("(A) " + str(qq) + "m/s²の速度の大きさを保って減速している。残り" + str(faster) + "m地点での速さは" + str(st.session_state.fast) + "m/sであった。")
+            st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
 
 
 if chapter == "2章":
