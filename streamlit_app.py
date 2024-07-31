@@ -35,13 +35,14 @@ if 'u' not in st.session_state:
 if 'fast' not in st.session_state:
     st.session_state.fast = random.randint(10,15)
 if 'q' not in st.session_state:
-    st.session_state.q = random.randint(1,9)
+    st.session_state.q = random.randint(0,8)
+brain = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 xx = number[st.session_state.x]
 yy = number[st.session_state.y]
 zz = number[st.session_state.z]
 uu = speed[st.session_state.u]
 faster = number[st.session_state.fast]
-qq = st.session_state.q * 0.1
+qq = brain[st.session_state.q]
 ss = speed[st.session_state.s]
 
 # 出題範囲
