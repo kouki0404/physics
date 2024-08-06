@@ -44,14 +44,6 @@ faster = number[st.session_state.fast]
 qq = brain[st.session_state.q]
 ss = speed[st.session_state.s]
 
-def load_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-
-image_path = 'img/image.jpeg'
-image_base64 = load_image(image_path)
-image_html = f'<img src="data:image/png;base64,{image_base64}" style="border-radius: 20px; width: 500px;">'
-
 # 出題範囲
 st.sidebar.title("章を選択してください")
 chapter = st.sidebar.radio("", ("1章", "2章", "3章", "4章", "5章"), horizontal=True)
@@ -217,8 +209,25 @@ if chapter == "1章":
             st.write("(A) " + str(qq) + "m/s²の速度の大きさを保って減速している。残り" + str(faster) + "m地点での速さは" + str(st.session_state.fast) + "m/sであった。")
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
             st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
-            st.write("(D) ")
-            
+            st.write("問 制限時間10sの間にゴールに到達できる物体はどれか答えよ")
+            st.session_state.solution_one = st.text_area("回答")
+
+            if st.button("解答確認"):
+                st.session_state.solution += 1
+                solution = [0,1,2]
+                one = st.session_state.fast * 10 + qq * -1 * 100 / 2
+                two = ss * 100 / 2
+                three = 10 * st.session_state.f
+                if one >= faster:
+                    solution[0] = 'A'
+                    if two >= faster:
+                        solution[1] = 'B'
+                    else:
+                        solution = ['A',1]
+                else:
+                    solution = [0,1]
+
+
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
