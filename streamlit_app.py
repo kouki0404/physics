@@ -1,11 +1,6 @@
 import streamlit as st
 import random
 import pandas as pd
-from PIL import Image
-
-file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
-img = Image.open(file_path)
-st.image(img)
 
 st.title("物理演習アプリ")
 if 'numbers' not in st.session_state:
