@@ -210,7 +210,7 @@ if chapter == "1章":
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
             st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
             st.write("問 制限時間10sの間にゴールに到達できる物体はどれか答えよ")
-            st.session_state.solution_one = st.text_area("回答")
+            st.session_state.solution_one = st.text_area("回答 ※大文字で答えてください、回答がない場合はなしと書いてください。")
 
             if st.button("解答確認"):
                 st.session_state.solution += 1
@@ -222,12 +222,30 @@ if chapter == "1章":
                     solution[0] = 'A'
                     if two >= faster:
                         solution[1] = 'B'
+                        if three >= faster:
+                            solution[2] = 'C'
+                        else:
+                            solution = ['A','B']
                     else:
                         solution = ['A',1]
+                        if three >= faster:
+                            solution[1] = 'C'
+                        else:
+                            solution = ['A']
                 else:
                     solution = [0,1]
-
-
+                    if two >= faster:
+                        solution[0] = 'B'
+                        if three >= faster:
+                            solution[1] = 'C'
+                        else:
+                            solution = ['B']
+                    else:
+                        solution = [0]
+                        if three >= faster:
+                            solution[0] = 'C'
+                        else:
+                            solution = ['なし']
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
