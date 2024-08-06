@@ -77,12 +77,12 @@ if chapter == "1章":
                 if int(st.session_state.solution_one) == st.session_state.s + st.session_state.f:
                     st.write("(1)正解")
                 else:
-                    st.write("(1)不正解")
+                    st.write("(1)不正解 流れる方向に沿って船が進む場合、速度の和が合成速度になります。")
 
                 if int(st.session_state.solution_two) == st.session_state.s - st.session_state.f:
                     st.write("(2)正解")
                 else:
-                    st.write("(2)不正解")
+                    st.write("(2)不正解 速度の方向はあっていますか？")
 
                 if xx / int(st.session_state.s + st.session_state.f) != "%.1f":
                     h = int(xx / st.session_state.solution_one)
@@ -90,13 +90,13 @@ if chapter == "1章":
                     if int(st.session_state.solution_three) == int(h):
                         st.write("(3)①正解")
                     else:
-                        st.write("(3)①不正解")
+                        st.write("(3)①不正解 (1)で出た答えを応用してみよう。")
                 else:
                     h = int(xx / st.session_state.solution_one)
                     if int(st.session_state.solution_three) == int(h):
                         st.write("(3)①正解")
                     else:
-                        st.write("(3)①不正解")
+                        st.write("(3)①不正解 (2)で出た答えを応用してみよう。")
 
                 if yy /  int(st.session_state.f - st.session_state.s) != "%.1f":
                     w = int(yy / st.session_state.solution_two * -1)
