@@ -246,6 +246,11 @@ if chapter == "1章":
                             solution[0] = 'C'
                         else:
                             solution = ['なし']
+                
+                if st.session_state.solution_one == solution:
+                    st.write("正解")
+                else:
+                    st.write("不正解")
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
