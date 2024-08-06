@@ -96,7 +96,7 @@ if chapter == "1章":
                     if int(st.session_state.solution_three) == int(h):
                         st.write("(3)①正解")
                     else:
-                        st.write("(3)①不正解 (2)で出た答えを応用してみよう。")
+                        st.write("(3)①不正解 (1)で出た答えを応用してみよう。")
 
                 if yy /  int(st.session_state.f - st.session_state.s) != "%.1f":
                     w = int(yy / (st.session_state.f - st.session_state.s))
@@ -105,14 +105,14 @@ if chapter == "1章":
                     if int(st.session_state.solution_four) == int(w):
                         st.write("(3)②正解")
                     else:
-                        st.write("(3)②不正解")
+                        st.write("(3)②不正解 (2)で出た答えを応用してみよう。")
 
                 else:
                     w = int(yy / (st.session_state.f - st.session_state.s))
                     if int(st.session_state.solution_four) == int(w):
                         st.write("(3)②正解")
                     else:
-                        st.write("(3)②不正解")
+                        st.write("(3)②不正解 (2)で出た答えを応用してみよう。")
 
             
             except ValueError:
