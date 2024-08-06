@@ -218,34 +218,37 @@ if chapter == "1章":
                 one = st.session_state.fast * 10 + qq * -1 * 100 / 2
                 two = ss * 100 / 2
                 three = 10 * st.session_state.f
-                if one >= faster:
-                    solution[0] = 'A'
-                    if two >= faster:
-                        solution[1] = 'B'
-                        if three >= faster:
-                            solution[2] = 'C'
+                try:
+                    if one >= faster:
+                        solution[0] = 'A'
+                        if two >= faster:
+                            solution[1] = 'B'
+                            if three >= faster:
+                                solution[2] = 'C'
+                            else:
+                                solution = ['A','B']
                         else:
-                            solution = ['A','B']
+                            solution = ['A',1]
+                            if three >= faster:
+                                solution[1] = 'C'
+                            else:
+                                solution = ['A']
                     else:
-                        solution = ['A',1]
-                        if three >= faster:
-                            solution[1] = 'C'
+                        solution = [0,1]
+                        if two >= faster:
+                            solution[0] = 'B'
+                            if three >= faster:
+                                solution[1] = 'C'
+                            else:
+                                solution = ['B']
                         else:
-                            solution = ['A']
-                else:
-                    solution = [0,1]
-                    if two >= faster:
-                        solution[0] = 'B'
-                        if three >= faster:
-                            solution[1] = 'C'
-                        else:
-                            solution = ['B']
-                    else:
-                        solution = [0]
-                        if three >= faster:
-                            solution[0] = 'C'
-                        else:
-                            solution = ['なし']
+                            solution = [0]
+                            if three >= faster:
+                                solution[0] = 'C'
+                            else:
+                                solution = ['なし']
+                except ValueError:
+                    st.write("入力された値が無効です。数字のみを入力してください")
                 
                 if st.session_state.solution_one == solution:
                     st.write("正解")
