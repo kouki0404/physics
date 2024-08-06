@@ -248,8 +248,25 @@ if chapter == "1章":
                                 solution = ['なし']
                 except ValueError:
                     st.write("入力された値が無効です。数字のみを入力してください")
+
+                if solution = ['A','B','C']:
+                    answer = "A,B,C"
+                if solution = ['A','B']:
+                    answer = "A,B"
+                if solution = ['A','C']:
+                    answer = "A,C"
+                if solution = ['B','C']:
+                    answer = "B,C"
+                if solution = ['A']:
+                    answer = "A"
+                if solution = ['B']:
+                    answer = "B"
+                if solution = ['C']:
+                    answer = "C"
+                if solution = 'なし':
+                    answer = "なし"
                 
-                if st.session_state.solution_one == solution:
+                if st.session_state.solution_one == answer:
                     st.write("正解")
                 else:
                     st.write("不正解")
