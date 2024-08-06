@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import pandas as pd
+from PIL import Image
 
 st.title("物理演習アプリ")
 if 'numbers' not in st.session_state:
@@ -210,6 +211,9 @@ if chapter == "1章":
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
             st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
             st.write("(D) ")
+            file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
+            img = Image.open(file_path)
+            st.image(img)
 
 
 if chapter == "2章":
