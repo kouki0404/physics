@@ -85,7 +85,7 @@ if chapter == "1章":
                 else:
                     st.write("(2)不正解")
 
-                if xx / st.session_state.solution_one != "%.1f":
+                if xx / int(st.session_state.s + st.session_state.f) != "%.1f":
                     h = int(xx / st.session_state.solution_one)
                     h = round(h,1)
                     if int(st.session_state.solution_three) == int(h):
