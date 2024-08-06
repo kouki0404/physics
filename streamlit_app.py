@@ -44,6 +44,14 @@ faster = number[st.session_state.fast]
 qq = brain[st.session_state.q]
 ss = speed[st.session_state.s]
 
+def load_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+image_path = 'img/image.jpeg'
+image_base64 = load_image(image_path)
+image_html = f'<img src="data:image/png;base64,{image_base64}" style="border-radius: 20px; width: 500px;">'
+
 # 出題範囲
 st.sidebar.title("章を選択してください")
 chapter = st.sidebar.radio("", ("1章", "2章", "3章", "4章", "5章"), horizontal=True)
@@ -210,7 +218,7 @@ if chapter == "1章":
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
             st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
             st.write("(D) ")
-            <img src="img.jpg" />
+            
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
