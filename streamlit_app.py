@@ -1,8 +1,12 @@
 import streamlit as st
 import random
 import pandas as pd
+from PIL import Image
 
-# Streamlitアプリのタイトル
+file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
+img = Image.open(file_path)
+st.image(img)
+
 st.title("物理演習アプリ")
 if 'numbers' not in st.session_state:
     st.session_state.numbers = 0
@@ -75,7 +79,7 @@ if chapter == "1章":
             st.session_state.solution += 1
 
             try:
-                # 数値の比較
+                
                 if int(st.session_state.solution_one) == st.session_state.s + st.session_state.f:
                     st.write("(1)正解")
                 else:
@@ -131,7 +135,7 @@ if chapter == "1章":
         if st.button("解答確認"):
             st.session_state.solution += 1  
             try:
-                # 数値の比較
+                
                 if int(st.session_state.solution_one) == st.session_state.x - st.session_state.y:
                     st.write("(1)正解")
                 else:
@@ -169,7 +173,7 @@ if chapter == "1章":
                 st.session_state.solution += 1  
                 if st.session_state.y > 5:
                     try:
-                        # 数値の比較
+                        
                         if int(st.session_state.solution_one) == st.session_state.x + int(uu * number_y):
                             st.write("(1)正解")
                         else:
@@ -178,7 +182,7 @@ if chapter == "1章":
                         st.write("入力された値が無効です。数字のみを入力してください")
                 else:
                     try:
-                        # 数値の比較
+                        
                         if int(st.session_state.solution_one) == st.session_state.x + int(uu * st.session_state.y):
                             st.write("(1)正解")
                         else:
@@ -209,6 +213,8 @@ if chapter == "1章":
             st.write("4つの物体はそれぞれ以下のように一直線上に運動をしている")
             st.write("(A) " + str(qq) + "m/s²の速度の大きさを保って減速している。残り" + str(faster) + "m地点での速さは" + str(st.session_state.fast) + "m/sであった。")
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
+            st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
+            st.write("(D) ")
 
 
 if chapter == "2章":
