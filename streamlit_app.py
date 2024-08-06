@@ -61,7 +61,7 @@ if chapter == "1章":
     if choose == "合成速度":
         st.session_state.question += 1
         if st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f") != 0:
-            st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f") = 0
+            st.number_input("(1)回答 ※数字のみ", step=0.1, format="%.1f")
             st.number_input("(2)回答 ※数字のみ", step=0.1, format="%.1f") = 0
             st.number_input("(3)①回答 ※数字のみ", step=0.1, format="%.1f") = 0
             st.number_input("(3)②回答 ※数字のみ", step=0.1, format="%.1f") = 0
@@ -103,7 +103,7 @@ if chapter == "1章":
                     else:
                         st.write("(3)①不正解")
 
-                if yy / st.session_state.solution_two * -1 != "%.1f":
+                if yy /  int(st.session_state.f - st.session_state.s) != "%.1f":
                     w = int(yy / st.session_state.solution_two * -1)
                     w = round(w, 1)
                     
