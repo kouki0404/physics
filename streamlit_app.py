@@ -210,7 +210,7 @@ if chapter == "1章":
             st.write("(B) " + str(ss) + "m/s²で等加速度直線運動をしている。")
             st.write("(C) " + str(st.session_state.f) + "m/sで等速直線運動をしている。")
             st.write("(D) ")
-            <img src="/workspaces/physics/img/image.jpeg">
+            img src="/workspaces/physics/img/image.jpeg"
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
