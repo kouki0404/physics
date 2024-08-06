@@ -85,21 +85,21 @@ if chapter == "1章":
                     st.write("(2)不正解 速度の方向はあっていますか？")
 
                 if xx / int(st.session_state.s + st.session_state.f) != "%.1f":
-                    h = int(xx / st.session_state.solution_one)
+                    h = int(xx / st.session_state.s / st.session_state.f)
                     h = round(h,1)
                     if int(st.session_state.solution_three) == int(h):
                         st.write("(3)①正解")
                     else:
                         st.write("(3)①不正解 (1)で出た答えを応用してみよう。")
                 else:
-                    h = int(xx / st.session_state.solution_one)
+                    h = int(xx / st.session_state.s / st.session_state.f)
                     if int(st.session_state.solution_three) == int(h):
                         st.write("(3)①正解")
                     else:
                         st.write("(3)①不正解 (2)で出た答えを応用してみよう。")
 
                 if yy /  int(st.session_state.f - st.session_state.s) != "%.1f":
-                    w = int(yy / st.session_state.solution_two * -1)
+                    w = int(yy / (st.session_state.f - st.session_state.s))
                     w = round(w, 1)
                     
                     if int(st.session_state.solution_four) == int(w):
@@ -108,7 +108,7 @@ if chapter == "1章":
                         st.write("(3)②不正解")
 
                 else:
-                    w = int(yy / st.session_state.solution_two * -1)
+                    w = int(yy / (st.session_state.f - st.session_state.s))
                     if int(st.session_state.solution_four) == int(w):
                         st.write("(3)②正解")
                     else:
