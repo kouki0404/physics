@@ -213,11 +213,11 @@ if chapter == "1章":
             st.session_state.solution_one = st.text_area("回答 ※大文字で答えてください、回答がない場合はなしと書いてください。")
 
             if st.button("解答確認"):
-                st.session_state.solution += 1
                 solution = [0,1,2]
                 one = st.session_state.fast * 10 + qq * -1 * 100 / 2
                 two = ss * 100 / 2
                 three = 10 * st.session_state.f
+                st.session_state.solution += 1
                 try:
                     if one >= faster:
                         solution[0] = 'A'
