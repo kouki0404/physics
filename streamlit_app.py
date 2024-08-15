@@ -252,25 +252,54 @@ if chapter == "1章":
 
                 if solution == ['A','B','C']:
                     answer = "A,B,C"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['A','B']:
                     answer = "A,B"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['A','C']:
                     answer = "A,C"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['B','C']:
                     answer = "B,C"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['A']:
                     answer = "A"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['B']:
                     answer = "B"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == ['C']:
                     answer = "C"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 if solution == 'なし':
                     answer = "なし"
+                    if st.session_state.solution_one == answer:
+                        st.write("正解")
+                    else:
+                        st.write("不正解")
                 
-                if st.session_state.solution_one == answer:
-                    st.write("正解")
-                else:
-                    st.write("不正解")
+
 
 if chapter == "2章":
     choose = st.sidebar.selectbox("出題範囲", second)
